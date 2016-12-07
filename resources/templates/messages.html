@@ -1,0 +1,27 @@
+<html>
+<br>
+Welcome {{name}}!
+<form action="/createMessages"  method="post">
+    <input type="text" placeholder="Enter Message" name="newMessage" width="1800"/>
+    <button type="submit">Save</button> </br>
+    </form>
+    <form action="/editMessage" method="post">
+    <input type="text" placeholder="Message #" name="updateMessage"/>
+    <input type="text" placeholder="Update Message" name="editMessage"/>
+    <button type="submit">Edit</button></br>
+        </form>
+    <form action="/delete" method="post">
+    <input type="text" placeholder="Delete Message #" name="deleteMessage"/>
+    <button type="submit">Delete</button>
+        </form>
+
+<ol>Messages by {{name}}:
+    {{#message}}
+    <li> {{note}} </li>
+    {{/message}}
+</ol></br>
+<form action="/logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+</body>
+</html>
